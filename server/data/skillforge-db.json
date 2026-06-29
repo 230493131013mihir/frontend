@@ -1,0 +1,192 @@
+{
+  "companies": [
+    {
+      "id": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Acme Corporation",
+      "domain": "acme.skillforge.ai",
+      "createdAt": "2026-06-29T10:26:55.573Z",
+      "updatedAt": "2026-06-29T10:26:55.573Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "email": "admin@acme.com",
+      "password": "$2a$10$tT5BzSZKxvIQex4w5GfyKeFAGVuOpoqR9MFnhbi6QAAHKIRijKzca",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "role": "COMPANY_OWNER",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "isVerified": true,
+      "twoFactorEnabled": false,
+      "createdAt": "2026-06-29T10:26:55.573Z",
+      "updatedAt": "2026-06-29T10:26:55.573Z"
+    },
+    {
+      "id": "a570a118-d494-42a7-bc14-388988366b66",
+      "email": "employee@acme.com",
+      "password": "$2a$10$ETELdyeMqYxki52aKMq0TeHgiI0XhO1IG6Oitq4Ym6vtCNERduas.",
+      "firstName": "John",
+      "lastName": "Smith",
+      "role": "EMPLOYEE",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "isVerified": true,
+      "twoFactorEnabled": false,
+      "createdAt": "2026-06-29T10:26:55.573Z",
+      "updatedAt": "2026-06-29T10:26:55.573Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "b92fd8f5-c553-4746-a0e9-9841afc05d5a",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3Mjg4MTYsImV4cCI6MTc4MjcyOTcxNn0.LmElPLFpHRYWTIJcCBKQAyG9Z_w8rQccUNQVtq9fQDQ",
+      "expiresAt": "2026-07-06T10:26:56.004Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:26:56.005Z"
+    },
+    {
+      "id": "5f36ebb3-7f5f-4674-8df7-0452ea9e8ce5",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3MjkwNzksImV4cCI6MTc4MjcyOTk3OX0.7n2Tqg6B4VOFK1DGTWaf28I6dQzBn1hrD3pX1PRUjNU",
+      "expiresAt": "2026-07-06T10:31:19.971Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:31:19.972Z"
+    },
+    {
+      "id": "16f69c53-a757-4efc-ab30-2561b5c132f9",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3MjkzOTIsImV4cCI6MTc4MjczMDI5Mn0.xCn99aMemPjPoN0OQdaK2yG7XtIbLFEL6WW-fhwhwPc",
+      "expiresAt": "2026-07-06T10:36:32.808Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:36:32.808Z"
+    },
+    {
+      "id": "c08f60ae-0ee5-4145-8f21-88617ae129f1",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3Mjk1NTksImV4cCI6MTc4MjczMDQ1OX0.eC3izYqlZ5P8S4AoVcablIIdqIiFP0MUKWwOIgy-Nko",
+      "expiresAt": "2026-07-06T10:39:19.142Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:39:19.143Z"
+    },
+    {
+      "id": "5dda4a48-43f7-4d28-b074-f6b3a593a637",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3MzAxMTMsImV4cCI6MTc4MjczMTAxM30.n0LL2Nm2IipHEan4JKR28T0kVd3lymAM0FLcr6Saf4A",
+      "expiresAt": "2026-07-06T10:48:33.866Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:48:33.867Z"
+    },
+    {
+      "id": "35b9a670-db48-4538-8db1-2a42730e9a0e",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODI3MzAxMzgsImV4cCI6MTc4MjczMTAzOH0.PX0uScC_KDWNybRPzsha_6pVElCzhYvKfNpk7TursiY",
+      "expiresAt": "2026-07-06T10:48:58.495Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:48:58.495Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "ca11cb92-c0d5-4318-8865-d76c62da4d3b",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:48:58.495Z"
+    },
+    {
+      "id": "aa997b35-d8a5-44ac-ba32-a521ee4cfa4f",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:48:33.867Z"
+    },
+    {
+      "id": "370d9cf9-773d-4fb8-9816-521d4fc1930a",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:39:19.143Z"
+    },
+    {
+      "id": "68a3547d-2c94-47a6-9224-090c0ba710fa",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:36:32.808Z"
+    },
+    {
+      "id": "a667b1f5-d0e6-48b7-aa40-514e1667970d",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:31:19.972Z"
+    },
+    {
+      "id": "25235dfb-16ce-439a-9709-b2cb5810b815",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-06-29T10:26:56.005Z"
+    },
+    {
+      "id": "3a803ca4-fbf4-430c-b544-026264b07fba",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "SYSTEM_SEED",
+      "details": "Initial local database created",
+      "createdAt": "2026-06-29T10:26:55.573Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "48a4c16a-e4ef-4299-ad71-d6c8c88c1597",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Metro Foods",
+      "email": "ops@metrofoods.example",
+      "stage": "New",
+      "value": 24000,
+      "owner": "Jane Doe",
+      "createdAt": "2026-06-29T10:49:35.332Z",
+      "updatedAt": "2026-06-29T10:49:35.332Z"
+    },
+    {
+      "id": "33408dc8-ffea-4226-a0a6-98f691ef97fa",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Test Client",
+      "email": "testclient@example.com",
+      "stage": "New",
+      "value": 12345,
+      "owner": "Jane Doe",
+      "createdAt": "2026-06-29T10:26:56.163Z",
+      "updatedAt": "2026-06-29T10:26:56.163Z"
+    },
+    {
+      "id": "d1e3152d-559f-4ac9-8eaf-ec16c4ae051c",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Northstar Retail",
+      "email": "ops@northstar.example",
+      "stage": "Qualified",
+      "value": 42000,
+      "owner": "Jane Doe",
+      "createdAt": "2026-06-29T10:26:55.573Z",
+      "updatedAt": "2026-06-29T10:26:55.573Z"
+    },
+    {
+      "id": "a9c4b274-ac83-4c16-8555-bc98493fe118",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "BluePeak Hospital",
+      "email": "admin@bluepeak.example",
+      "stage": "Proposal",
+      "value": 86000,
+      "owner": "John Smith",
+      "createdAt": "2026-06-29T10:26:55.573Z",
+      "updatedAt": "2026-06-29T10:26:55.573Z"
+    }
+  ]
+}

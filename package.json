@@ -1,0 +1,24 @@
+{
+  "name": "skillforge-ai",
+  "version": "1.0.0",
+  "description": "SkillForge AI - Business Operating System (ERP + CRM + HRM + Finance + AI)",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev:server",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "start:server": "npm run build:server && npm run start --workspace=server",
+    "build:server": "npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build": "npm run build:server && npm run build:client",
+    "prisma:generate": "npm run prisma:generate --workspace=server",
+    "db:migrate": "npm run db:migrate --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
+    "db:studio": "npm run db:studio --workspace=server",
+    "lint": "npm run lint --workspace=client"
+  }
+}

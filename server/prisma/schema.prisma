@@ -1,0 +1,76 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  SUPER_ADMIN
+  COMPANY_OWNER
+  MANAGER
+  EMPLOYEE
+  CUSTOMER
+  VENDOR
+  HR
+  ACCOUNTANT
+  SALES_EXECUTIVE
+  SUPPORT_EXECUTIVE
+}
+
+model Company {
+  id        String   @id @default(uuid())
+  name      String
+  domain    String?  @unique
+  logo      String?
+  users     User[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id               String     @id @default(uuid())
+  email            String     @unique
+  password         String
+  firstName        String
+  lastName         String
+  role             Role       @default(EMPLOYEE)
+  companyId        String?
+  company          Company?   @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  isVerified       Boolean    @default(false)
+  twoFactorEnabled Boolean    @default(false)
+  sessions         Session[]
+  auditLogs        AuditLog[]
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  @@index([email])
+  @@index([companyId])
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  userAgent String?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  details   String? // JSON details stored as string
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
