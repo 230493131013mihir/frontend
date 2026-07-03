@@ -13,6 +13,36 @@ type Lead = {
   value: number
   owner: string
 }
+type Employee = {
+  id: string
+  name: string
+  email: string
+  department: string
+  role: string
+  status: 'Active' | 'On Leave' | 'Inactive'
+}
+type Product = {
+  id: string
+  name: string
+  sku: string
+  category: string
+  stock: number
+  price: number
+}
+type Invoice = {
+  id: string
+  customer: string
+  amount: number
+  status: 'Draft' | 'Sent' | 'Paid' | 'Overdue'
+  dueDate: string
+}
+type WorkTask = {
+  id: string
+  title: string
+  owner: string
+  priority: 'Low' | 'Medium' | 'High'
+  status: 'Todo' | 'In Progress' | 'Done'
+}
 type User = {
   id: string
   email: string
@@ -21,10 +51,19 @@ type User = {
   role: string
   company?: { name: string; domain?: string }
 }
-type Summary = { metrics: Metric[]; modules: Module[]; activities: Activity[]; leads: Lead[] }
+type Summary = {
+  metrics: Metric[]
+  modules: Module[]
+  activities: Activity[]
+  leads: Lead[]
+  employees: Employee[]
+  products: Product[]
+  invoices: Invoice[]
+  tasks: WorkTask[]
+}
 
 const API_URL = 'http://localhost:5000'
-const navigation = ['Command', 'CRM', 'AI Desk', 'Reports', 'Settings']
+const navigation = ['Command', 'CRM', 'HR', 'Inventory', 'Finance', 'Tasks', 'AI Desk', 'Reports', 'Settings']
 
 const defaultSummary: Summary = {
   metrics: [
@@ -41,6 +80,10 @@ const defaultSummary: Summary = {
   ],
   activities: [],
   leads: [],
+  employees: [],
+  products: [],
+  invoices: [],
+  tasks: [],
 }
 
 function App() {
@@ -57,6 +100,32 @@ function App() {
     stage: 'New' as Lead['stage'],
     value: 24000,
     owner: 'Jane Doe',
+  })
+  const [employeeForm, setEmployeeForm] = useState({
+    name: 'Riya Patel',
+    email: 'riya@acme.example',
+    department: 'HR',
+    role: 'HR Executive',
+    status: 'Active' as Employee['status'],
+  })
+  const [productForm, setProductForm] = useState({
+    name: 'Cloud POS License',
+    sku: 'POS-SUB-01',
+    category: 'Software',
+    stock: 120,
+    price: 79,
+  })
+  const [invoiceForm, setInvoiceForm] = useState({
+    customer: 'Metro Foods',
+    amount: 24000,
+    status: 'Draft' as Invoice['status'],
+    dueDate: '2026-07-30',
+  })
+  const [taskForm, setTaskForm] = useState({
+    title: 'Follow up with new CRM lead',
+    owner: 'Jane Doe',
+    priority: 'High' as WorkTask['priority'],
+    status: 'Todo' as WorkTask['status'],
   })
 
   const authHeaders = useMemo(
@@ -174,6 +243,30 @@ function App() {
       setMessage('Lead saved into the backend local database.')
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Could not save lead')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const saveModuleRecord = async <T,>(
+    event: FormEvent<HTMLFormElement>,
+    path: string,
+    payload: T,
+    successMessage: string,
+  ) => {
+    event.preventDefault()
+    setLoading(true)
+    setMessage('Saving record...')
+    try {
+      await request(path, {
+        method: 'POST',
+        headers: authHeaders,
+        body: JSON.stringify(payload),
+      })
+      await loadWorkspace()
+      setMessage(successMessage)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Could not save record')
     } finally {
       setLoading(false)
     }
@@ -387,6 +480,254 @@ function App() {
                   </div>
                   <span>{lead.stage}</span>
                   <strong>${lead.value.toLocaleString()}</strong>
+                </article>
+              ))}
+            </section>
+          </div>
+        )}
+
+        {activeView === 'HR' && (
+          <div className="crm-layout">
+            <form
+              className="panel"
+              onSubmit={(event) =>
+                saveModuleRecord(event, '/api/v1/workspace/employees', employeeForm, 'Employee saved into HR records.')
+              }
+            >
+              <h2>Add employee</h2>
+              <label>
+                Name
+                <input value={employeeForm.name} onChange={(event) => setEmployeeForm({ ...employeeForm, name: event.target.value })} />
+              </label>
+              <label>
+                Email
+                <input value={employeeForm.email} onChange={(event) => setEmployeeForm({ ...employeeForm, email: event.target.value })} />
+              </label>
+              <div className="two-col">
+                <label>
+                  Department
+                  <input
+                    value={employeeForm.department}
+                    onChange={(event) => setEmployeeForm({ ...employeeForm, department: event.target.value })}
+                  />
+                </label>
+                <label>
+                  Role
+                  <input value={employeeForm.role} onChange={(event) => setEmployeeForm({ ...employeeForm, role: event.target.value })} />
+                </label>
+              </div>
+              <label>
+                Status
+                <select
+                  value={employeeForm.status}
+                  onChange={(event) => setEmployeeForm({ ...employeeForm, status: event.target.value as Employee['status'] })}
+                >
+                  <option>Active</option>
+                  <option>On Leave</option>
+                  <option>Inactive</option>
+                </select>
+              </label>
+              <button className="primary-action" disabled={loading} type="submit">
+                Save employee
+              </button>
+            </form>
+            <section className="panel lead-list">
+              <h2>Employees</h2>
+              {summary.employees.map((employee) => (
+                <article key={employee.id}>
+                  <div>
+                    <strong>{employee.name}</strong>
+                    <span>{employee.email}</span>
+                  </div>
+                  <span>{employee.department}</span>
+                  <strong>{employee.status}</strong>
+                </article>
+              ))}
+            </section>
+          </div>
+        )}
+
+        {activeView === 'Inventory' && (
+          <div className="crm-layout">
+            <form
+              className="panel"
+              onSubmit={(event) =>
+                saveModuleRecord(event, '/api/v1/workspace/products', productForm, 'Product saved into inventory.')
+              }
+            >
+              <h2>Add product</h2>
+              <label>
+                Product
+                <input value={productForm.name} onChange={(event) => setProductForm({ ...productForm, name: event.target.value })} />
+              </label>
+              <label>
+                SKU
+                <input value={productForm.sku} onChange={(event) => setProductForm({ ...productForm, sku: event.target.value })} />
+              </label>
+              <div className="two-col">
+                <label>
+                  Category
+                  <input
+                    value={productForm.category}
+                    onChange={(event) => setProductForm({ ...productForm, category: event.target.value })}
+                  />
+                </label>
+                <label>
+                  Stock
+                  <input
+                    type="number"
+                    value={productForm.stock}
+                    onChange={(event) => setProductForm({ ...productForm, stock: Number(event.target.value) })}
+                  />
+                </label>
+              </div>
+              <label>
+                Price
+                <input
+                  type="number"
+                  value={productForm.price}
+                  onChange={(event) => setProductForm({ ...productForm, price: Number(event.target.value) })}
+                />
+              </label>
+              <button className="primary-action" disabled={loading} type="submit">
+                Save product
+              </button>
+            </form>
+            <section className="panel lead-list">
+              <h2>Products</h2>
+              {summary.products.map((product) => (
+                <article key={product.id}>
+                  <div>
+                    <strong>{product.name}</strong>
+                    <span>{product.sku}</span>
+                  </div>
+                  <span>{product.stock} units</span>
+                  <strong>${product.price.toLocaleString()}</strong>
+                </article>
+              ))}
+            </section>
+          </div>
+        )}
+
+        {activeView === 'Finance' && (
+          <div className="crm-layout">
+            <form
+              className="panel"
+              onSubmit={(event) =>
+                saveModuleRecord(event, '/api/v1/workspace/invoices', invoiceForm, 'Invoice saved into finance records.')
+              }
+            >
+              <h2>Create invoice</h2>
+              <label>
+                Customer
+                <input
+                  value={invoiceForm.customer}
+                  onChange={(event) => setInvoiceForm({ ...invoiceForm, customer: event.target.value })}
+                />
+              </label>
+              <div className="two-col">
+                <label>
+                  Amount
+                  <input
+                    type="number"
+                    value={invoiceForm.amount}
+                    onChange={(event) => setInvoiceForm({ ...invoiceForm, amount: Number(event.target.value) })}
+                  />
+                </label>
+                <label>
+                  Status
+                  <select
+                    value={invoiceForm.status}
+                    onChange={(event) => setInvoiceForm({ ...invoiceForm, status: event.target.value as Invoice['status'] })}
+                  >
+                    <option>Draft</option>
+                    <option>Sent</option>
+                    <option>Paid</option>
+                    <option>Overdue</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Due date
+                <input
+                  type="date"
+                  value={invoiceForm.dueDate}
+                  onChange={(event) => setInvoiceForm({ ...invoiceForm, dueDate: event.target.value })}
+                />
+              </label>
+              <button className="primary-action" disabled={loading} type="submit">
+                Save invoice
+              </button>
+            </form>
+            <section className="panel lead-list">
+              <h2>Invoices</h2>
+              {summary.invoices.map((invoice) => (
+                <article key={invoice.id}>
+                  <div>
+                    <strong>{invoice.customer}</strong>
+                    <span>Due {invoice.dueDate}</span>
+                  </div>
+                  <span>{invoice.status}</span>
+                  <strong>${invoice.amount.toLocaleString()}</strong>
+                </article>
+              ))}
+            </section>
+          </div>
+        )}
+
+        {activeView === 'Tasks' && (
+          <div className="crm-layout">
+            <form
+              className="panel"
+              onSubmit={(event) => saveModuleRecord(event, '/api/v1/workspace/tasks', taskForm, 'Task saved into work queue.')}
+            >
+              <h2>Create task</h2>
+              <label>
+                Title
+                <input value={taskForm.title} onChange={(event) => setTaskForm({ ...taskForm, title: event.target.value })} />
+              </label>
+              <label>
+                Owner
+                <input value={taskForm.owner} onChange={(event) => setTaskForm({ ...taskForm, owner: event.target.value })} />
+              </label>
+              <div className="two-col">
+                <label>
+                  Priority
+                  <select
+                    value={taskForm.priority}
+                    onChange={(event) => setTaskForm({ ...taskForm, priority: event.target.value as WorkTask['priority'] })}
+                  >
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </label>
+                <label>
+                  Status
+                  <select
+                    value={taskForm.status}
+                    onChange={(event) => setTaskForm({ ...taskForm, status: event.target.value as WorkTask['status'] })}
+                  >
+                    <option>Todo</option>
+                    <option>In Progress</option>
+                    <option>Done</option>
+                  </select>
+                </label>
+              </div>
+              <button className="primary-action" disabled={loading} type="submit">
+                Save task
+              </button>
+            </form>
+            <section className="panel lead-list">
+              <h2>Tasks</h2>
+              {summary.tasks.map((task) => (
+                <article key={task.id}>
+                  <div>
+                    <strong>{task.title}</strong>
+                    <span>{task.owner}</span>
+                  </div>
+                  <span>{task.priority}</span>
+                  <strong>{task.status}</strong>
                 </article>
               ))}
             </section>

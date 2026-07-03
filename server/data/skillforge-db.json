@@ -90,9 +90,73 @@
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
       "ipAddress": "::1",
       "createdAt": "2026-06-29T10:48:58.495Z"
+    },
+    {
+      "id": "8c9a924a-6bcb-4591-9444-aa8c5f4a8597",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODMwNjkxMjcsImV4cCI6MTc4MzA3MDAyN30.huyRd_6HSB_0aO5Jf51x2aPWoFuUnIhnZO0AsiL-vC0",
+      "expiresAt": "2026-07-10T08:58:47.138Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T08:58:47.138Z"
+    },
+    {
+      "id": "84769b09-658f-49d5-86c1-ee2d9b9e124e",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODMwNzAyMjgsImV4cCI6MTc4MzA3MTEyOH0.2DzpXbcNm3gdmwyESu2PQLtzvjPCuq4DEA0FOLrcQHo",
+      "expiresAt": "2026-07-10T09:17:08.839Z",
+      "userAgent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8737",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:17:08.839Z"
+    },
+    {
+      "id": "ab88b80d-450f-4448-ba83-40404b4ca081",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODMwNzA1NTQsImV4cCI6MTc4MzA3MTQ1NH0.uFMW-6EYSTVc3OcnLFlgvXj7j6tUYFwTc1b4nXSAtjE",
+      "expiresAt": "2026-07-10T09:22:34.871Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:22:34.871Z"
+    },
+    {
+      "id": "d16f0e10-55de-4257-b753-604bbe9c55a7",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3OWU1ODk2OC1lZjhjLTRiNDQtODA0ZS01ZjcyZTNmMDAwMjciLCJpYXQiOjE3ODMwNzA1OTQsImV4cCI6MTc4MzA3MTQ5NH0.7MZW8hTpo-QThZ6ZgTv-aUUtqbxLwwxnufEGPz8lIv4",
+      "expiresAt": "2026-07-10T09:23:14.829Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:23:14.829Z"
     }
   ],
   "auditLogs": [
+    {
+      "id": "6214f003-0cd7-403e-89a5-03dc20cb1c33",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:23:14.829Z"
+    },
+    {
+      "id": "bd07d942-5b37-45bd-814b-0ae7e0550bc2",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:22:34.871Z"
+    },
+    {
+      "id": "f376d347-16e4-4060-ace7-72cf4325041a",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T09:17:08.839Z"
+    },
+    {
+      "id": "599cb5ec-e6d2-4380-89d4-cd215bdea895",
+      "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
+      "action": "LOGIN",
+      "ipAddress": "::1",
+      "createdAt": "2026-07-03T08:58:47.138Z"
+    },
     {
       "id": "ca11cb92-c0d5-4318-8865-d76c62da4d3b",
       "userId": "79e58968-ef8c-4b44-804e-5f72e3f00027",
@@ -187,6 +251,151 @@
       "owner": "John Smith",
       "createdAt": "2026-06-29T10:26:55.573Z",
       "updatedAt": "2026-06-29T10:26:55.573Z"
+    }
+  ],
+  "employees": [
+    {
+      "id": "6ba2d56c-ed29-43d2-8a32-796405e0d8bd",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Riya Patel",
+      "email": "riya@acme.example",
+      "department": "HR",
+      "role": "HR Executive",
+      "status": "Active",
+      "createdAt": "2026-07-03T09:23:37.867Z",
+      "updatedAt": "2026-07-03T09:23:37.867Z"
+    },
+    {
+      "id": "70de57d8-f899-45f0-b28e-71e4514acc59",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Smoke HR",
+      "email": "smoke.hr@example.com",
+      "department": "QA",
+      "role": "Tester",
+      "status": "Active",
+      "createdAt": "2026-07-03T08:58:47.545Z",
+      "updatedAt": "2026-07-03T08:58:47.545Z"
+    },
+    {
+      "id": "7438d8b3-dd0f-40d3-a0ed-b84d2765051a",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "name": "Aarav Mehta",
+      "email": "aarav@acme.example",
+      "department": "Sales",
+      "role": "Sales Executive",
+      "status": "Active",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    },
+    {
+      "id": "c5a85a5d-dc68-40f9-b247-0fe655c1fc19",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "name": "Priya Sharma",
+      "email": "priya@acme.example",
+      "department": "Operations",
+      "role": "Manager",
+      "status": "Active",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "137fb342-a998-4ea4-9057-e502af332550",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "name": "Smoke Product",
+      "sku": "SMK-001",
+      "category": "Test",
+      "stock": 5,
+      "price": 10,
+      "createdAt": "2026-07-03T08:58:47.882Z",
+      "updatedAt": "2026-07-03T08:58:47.882Z"
+    },
+    {
+      "id": "32ace404-ef31-4980-b1a2-b2857e7dd81d",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "name": "Premium POS Terminal",
+      "sku": "POS-1001",
+      "category": "Hardware",
+      "stock": 34,
+      "price": 499,
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    },
+    {
+      "id": "d41ced09-9de2-4fac-b9a1-05b661424603",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "name": "Inventory Scanner",
+      "sku": "SCAN-2040",
+      "category": "Barcode",
+      "stock": 18,
+      "price": 149,
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "9d6f1875-e3dc-441d-9c5f-5df409abbef5",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "customer": "Smoke Customer",
+      "amount": 99,
+      "status": "Draft",
+      "dueDate": "2026-08-01",
+      "createdAt": "2026-07-03T08:58:48.220Z",
+      "updatedAt": "2026-07-03T08:58:48.220Z"
+    },
+    {
+      "id": "75ad5708-43f5-4ad8-859d-77c0c7f8d640",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "customer": "Northstar Retail",
+      "amount": 42000,
+      "status": "Sent",
+      "dueDate": "2026-07-15",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    },
+    {
+      "id": "7ecf35e3-10fa-4e6c-9626-f0654c0bdafb",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "customer": "BluePeak Hospital",
+      "amount": 86000,
+      "status": "Draft",
+      "dueDate": "2026-07-25",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "e1f4e2b2-971a-4af7-9cd4-4d220227ac98",
+      "companyId": "6affdc9b-69ed-4e1b-9873-65b32f6b60b4",
+      "title": "Smoke Task",
+      "owner": "Jane Doe",
+      "priority": "Medium",
+      "status": "Todo",
+      "createdAt": "2026-07-03T08:58:48.606Z",
+      "updatedAt": "2026-07-03T08:58:48.606Z"
+    },
+    {
+      "id": "3c3b586b-f872-4748-bb26-a21ca5460985",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "title": "Prepare CRM demo for client",
+      "owner": "Jane Doe",
+      "priority": "High",
+      "status": "In Progress",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
+    },
+    {
+      "id": "a637fdf1-cc1e-4fb8-ab2d-6d135825d384",
+      "companyId": "f920a23a-9fe6-4989-89af-937662a26dd0",
+      "title": "Review invoice workflow",
+      "owner": "John Smith",
+      "priority": "Medium",
+      "status": "Todo",
+      "createdAt": "2026-07-03T08:58:46.861Z",
+      "updatedAt": "2026-07-03T08:58:46.861Z"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 SkillForge AI is a runnable AI business operating system foundation for CRM, ERP, HR, inventory, finance, analytics, automation, and AI modules.
 
-This version is a complete Phase 1 MVP: it has a real frontend, backend APIs, login/register, protected dashboard, CRM lead creation, audit activity, and a local database file that works without Docker.
+This version is a complete runnable MVP foundation: it has a real frontend, backend APIs, login/register, protected dashboard, CRM, HR, inventory, finance, tasks, reports/audit activity, an AI Desk demo screen, and a local database file that works without Docker.
 
 ## What You Need
 
@@ -77,6 +77,10 @@ That file stores:
 - Sessions
 - Audit logs
 - CRM leads
+- Employees
+- Products
+- Invoices
+- Tasks
 
 So the app is runnable for another person without PostgreSQL setup.
 
@@ -88,7 +92,19 @@ So the app is runnable for another person without PostgreSQL setup.
 4. Backend validates request data.
 5. Backend stores or reads data from `server/data/skillforge-db.json`.
 6. Backend returns JSON response.
-7. Frontend updates the dashboard, CRM leads, reports, and messages.
+7. Frontend updates the dashboard, CRM, HR, inventory, finance, tasks, reports, and messages.
+
+## Working Modules
+
+- Authentication: login, register, logout, session token.
+- Dashboard: company metrics and module status.
+- CRM: create and view leads.
+- HR: create and view employees.
+- Inventory: create and view products/stock.
+- Finance: create and view invoices.
+- Tasks: create and view team tasks.
+- Reports: audit activity.
+- AI Desk: demo explanation screen for future AI features.
 
 ## Main Folders
 
